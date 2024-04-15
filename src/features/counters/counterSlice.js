@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {  createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   {
@@ -9,6 +9,7 @@ const initialState = [
     id: 2,
     value: 0,
   },
+  
 ];
 const counter = createSlice({
   name: "counters",
