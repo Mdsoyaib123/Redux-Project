@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import Counter from "./Component/counter";
-import { increment } from "./features/counters/counterSlice";
+import { decrement, increment } from "./features/counters/counterSlice";
 
 function App() {
   const counters = useSelector((state) => state.counter);
@@ -17,7 +17,7 @@ function App() {
   };
   const handleDecrement = (id) => {
 
-    dispatch(increment(id));
+    dispatch(decrement(id));
   };
   return (
     <>
