@@ -7,32 +7,27 @@ function App() {
   const counters = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
-  const totleCount = counters.reduce(
-    (sum, current) => sum + current.value,
-    0
-  );
+  const totleCount = counters.reduce((sum, current) => sum + current.value, 0);
   const handleIncrement = (id) => {
-   
     dispatch(increment(id));
   };
   const handleDecrement = (id) => {
-
     dispatch(decrement(id));
   };
   return (
-    <>
+    <div className=" ">
       {counters.map((c) => (
         <Counter
           key={c.id}
           count={c.value}
-          onHandleIncrement={()=>handleIncrement(c.id)}
-          onHandleDecrement={()=>handleDecrement(c.id)}
+          onHandleIncrement={() => handleIncrement(c.id)}
+          onHandleDecrement={() => handleDecrement(c.id)}
         ></Counter>
       ))}
-      <div className=" bg-gray-800 px-8 py-8 rounded-lg mt-2">
+      <div className=" bg-gray-800 px-16 py-8 rounded-lg mt-2">
         <h1 className="text-2xl ">Total count : {totleCount}</h1>
       </div>
-    </>
+    </div>
   );
 }
 
