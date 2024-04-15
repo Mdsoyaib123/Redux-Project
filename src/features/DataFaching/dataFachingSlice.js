@@ -19,6 +19,7 @@ const DataFachingSlice = createSlice({
          
           builder.addCase(getData.fulfilled, (state, action) => {
             state.user = action.payload
+            state.isLoading = false
           })
         
           builder.addCase(getData.rejected,(state, action) => {
