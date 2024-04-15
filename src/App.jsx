@@ -42,8 +42,11 @@ function App() {
         >
           Get Fetch Data{" "}
         </button>
+        {
+          FetchData.isLoading === true ? <h1 className="py-1 text-lg pt-2">Loading....</h1> : ''
+        }
         {FetchData?.user?.map((data) => (
-          <h1 className="py-1 text-lg" key={data.id}>
+          <h1 className="py-1 text-lg pt-2" key={data.id}>
             {data.name}
           </h1>
         ))}
